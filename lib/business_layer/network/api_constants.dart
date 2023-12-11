@@ -1,3 +1,5 @@
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+
 class ApiConstants {
   /// Private constructor to prevent class instantiation
   ApiConstants._privateConstructor();
@@ -18,8 +20,6 @@ class ApiConstants {
 
   /// weather api endpoint
   static weatherUrl(double lat, double lng) {
-    return "weather?lat=$lat&lon=$lng&appid=$weatherApiKey&lang=en";
+    return "weather?lat=$lat&lon=$lng&appid=${dotenv.env['WEATHER_API_KEY']}&lang=en";
   }
-
-  static const weatherApiKey = "3e9be206447bf46fa39c45840f2ccea9";
 }

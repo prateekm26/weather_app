@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
@@ -9,7 +10,9 @@ import 'package:weather_app/business_layer/util/helper/flavor_configuration_help
 import 'package:weather_app/data_layer/geolocator_helper.dart';
 import 'package:weather_app/presentation_layer/screen/home_screen.dart';
 
-void main() {
+void main() async {
+  await dotenv.load(fileName: ".env");
+
   runApp(MyApp());
 
   /// Sets the server configuration of the application
