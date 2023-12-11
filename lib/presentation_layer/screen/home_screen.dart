@@ -175,22 +175,15 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                 child: ImageTextRow(
                     imagePath: AppImages.sunrise,
                     title: "Sunrise",
-                    content: DateFormat()
-                        .add_jm()
-                        .format(DateTime.fromMillisecondsSinceEpoch(
-                          state.weather.sys!.sunrise! * 1000,
-                        ))),
+                    content: UtilHelper.instance
+                        .dateFormat(state.weather.sys!.sunrise!)),
               ),
               Expanded(
                 child: ImageTextRow(
-                  imagePath: AppImages.sunset,
-                  title: "Sunset",
-                  content: DateFormat()
-                      .add_jm()
-                      .format(DateTime.fromMillisecondsSinceEpoch(
-                        state.weather.sys!.sunset! * 1000,
-                      )),
-                ),
+                    imagePath: AppImages.sunset,
+                    title: "Sunset",
+                    content: UtilHelper.instance
+                        .dateFormat(state.weather.sys!.sunset!)),
               )
             ],
           ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:weather_app/business_layer/localization/app_localizations.dart';
 import 'package:weather_app/business_layer/network/exception_type.dart';
 import 'package:weather_app/business_layer/util/helper/device_info_helper.dart';
@@ -75,5 +76,12 @@ class UtilHelper {
 
   int kevinToCelsius(double kelvin) {
     return (kelvin - 273.15).round();
+  }
+
+  /// date format from millisecondEpoch
+  String dateFormat(int date) {
+    return DateFormat().add_jm().format(DateTime.fromMillisecondsSinceEpoch(
+          date * 1000,
+        ));
   }
 }
