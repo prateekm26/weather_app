@@ -46,11 +46,6 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
       listener: (context, state) {},
       builder: (context, state) {
         return Scaffold(
-          //extendBodyBehindAppBar: true,
-          /*    appBar: AppBar(
-            backgroundColor: Colors.transparent,
-            elevation: 0,
-          ),*/
           backgroundColor: Colors.black,
           body: buildBody(),
         );
@@ -76,10 +71,6 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
               if (state is WeatherAppSuccess) {
                 return weatherDetailWidget(context, state);
               } else if (state is WeatherAppFailure) {
-                // print("failure");
-                /* DialogHelper().showRetryAlertDialog(context, retry: () {
-                  print("retry");
-                });*/
                 return Container();
               } else {
                 return _loadingWidget();
